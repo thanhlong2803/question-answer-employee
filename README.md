@@ -2,7 +2,7 @@
 REQUIREMENTS
 1.	You are required to write a brief (maximum 1 page) technical specification for the solution to the problem described below.
 2.	For Database design please provide an ERD (Entity Relationship Diagram, hand drawn on paper is also acceptable).
-3.	Implement the application using C# with Winform. 
+3.	Implement the application using Asp.net core Net6 and angular
 
 
 PROBLEM
