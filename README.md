@@ -1,4 +1,4 @@
-# question-answer-employee
+# Employee and for judging of the management
 REQUIREMENTS
 1.	You are required to write a brief (maximum 1 page) technical specification for the solution to the problem described below.
 2.	For Database design please provide an ERD (Entity Relationship Diagram, hand drawn on paper is also acceptable).
