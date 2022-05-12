@@ -16,3 +16,6 @@ b.	Manual Selection: The user shall manually select each question from the QD fo
 
 
 ![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/question.png)
+
+# Struct of asp net core
+![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/struct-asp-core.png)
