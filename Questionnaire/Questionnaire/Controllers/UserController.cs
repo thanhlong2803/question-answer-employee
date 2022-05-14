@@ -4,7 +4,7 @@ namespace Questionnaire.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class QuesitonController : ControllerBase
+    public class UserController : ControllerBase
     {        
     }
 }
