@@ -3,7 +3,7 @@ using be.Services;
 
 namespace Infrastructure
 {
-    public class UserRepository
+    public class UserRepository : IUserRepository
     {
         private SettingDbcontext _dbcontext;
         public UserRepository(SettingDbcontext dbcontext)
