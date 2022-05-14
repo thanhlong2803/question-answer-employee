@@ -10,7 +10,6 @@ namespace Infrastructure
         {
 
         }
-
         public DbSet<Opition> Opition { get; set; }
         public DbSet<Question> Question { get; set; }
         public DbSet<Test> Test { get; set; }
