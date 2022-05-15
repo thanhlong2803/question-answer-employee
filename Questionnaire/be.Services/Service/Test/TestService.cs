@@ -1,5 +1,6 @@
 ﻿
 using be.Data;
+using be.Data.Model;
 
 namespace be.Services
 {
@@ -18,6 +19,10 @@ namespace be.Services
         public bool CreateTest(Test test)
         {
             return _testRepository.CreateTest(test);
+        }
+        public bool CreateTestQuestion(long testId, List<QuestionVo> questionVos)
+        {
+            return (_testRepository.CreateTestQuestion(testId, questionVos));
         }
     }
 }

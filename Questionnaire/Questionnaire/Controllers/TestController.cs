@@ -1,4 +1,5 @@
 using be.Data;
+using be.Data.Model;
 using be.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,12 +27,16 @@ namespace Questionnaire.Controllers
         public ActionResult<bool> CreateTest(Test test)
         {
             return _testService.CreateTest(test);
-        }
+        }       
 
-        [HttpPost]
-        public ActionResult<bool> TestQuestion(Test test, List<Question> questions)
+       [HttpGet("")]
+       public ActionResult<List<Qu>>
+
+
+        [HttpPost("CreateTestQuestion")]
+        public ActionResult<bool> CreateTestQuestion(long testId, List<QuestionVo> questionVos)
         {
-            return null;
+            return _testService.CreateTestQuestion(testId, questionVos);
         }
 
         #endregion

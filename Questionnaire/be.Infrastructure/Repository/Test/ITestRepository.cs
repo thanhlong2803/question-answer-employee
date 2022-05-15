@@ -1,4 +1,5 @@
 ﻿using be.Data;
+using be.Data.Model;
 
 namespace be.Services
 {
@@ -6,5 +7,6 @@ namespace be.Services
     {
         List<Test> GetTests();
         bool CreateTest(Test test);
+        bool CreateTestQuestion(long testId, List<QuestionVo> questionVos);
     }
 }
