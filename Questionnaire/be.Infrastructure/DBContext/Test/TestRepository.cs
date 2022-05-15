@@ -12,11 +12,19 @@ namespace Infrastructure
         {
             _dbcontext = dbcontext;
         }
-        
-        public List<Test> ResultQuestion(Test test, List<Question> questions)
+        public List<Test> GetTests()
         {
-            return null;
+            return _dbcontext.Test.ToList();
         }
+        public bool CreateTest(Test test)
+        {
+            if (test == null)
+                return false;
 
+            _dbcontext.Test.Add(test);
+            _dbcontext.SaveChanges();
+
+            return true;
+        }
     }
 }
