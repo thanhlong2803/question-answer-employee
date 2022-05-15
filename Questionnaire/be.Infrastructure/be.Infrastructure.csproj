@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\be.Data\be.Data.csproj" />
-    <ProjectReference Include="..\be.Services\be.Services.csproj" />
   </ItemGroup>
 
 </Project>

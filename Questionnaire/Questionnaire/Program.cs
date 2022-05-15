@@ -19,9 +19,7 @@ builder.Services.AddDbContext<SettingDbcontext>(opt => opt.UseSqlServer(configur
 
 //add serviecs to the container
 builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IQuestionService, QuesitionService>();
-builder.Services.AddScoped<IOpitionService, OpitionService>();
-builder.Services.AddScoped<ITestService, TestService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.
