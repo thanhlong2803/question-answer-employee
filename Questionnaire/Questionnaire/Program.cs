@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 //register configuration 
-ConfigurationManager configuration = new ConfigurationManager();
+ConfigurationManager configuration = builder.Configuration;
 
 // Add services to the container.
 builder.Services.AddControllers();

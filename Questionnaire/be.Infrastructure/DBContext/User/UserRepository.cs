@@ -28,7 +28,10 @@ namespace Infrastructure
             var user = _dbcontext.User.Where(c => c.UserId == id).FirstOrDefault();
             if (user == null)
                 return false;
+
             _dbcontext.Remove(user);
+            _dbcontext.SaveChanges();
+
             return true;
         }
 
@@ -56,6 +59,7 @@ namespace Infrastructure
             userEnity.LastName = user.LastName;
 
             _dbcontext.Update(userEnity);
+            _dbcontext.SaveChanges();
             return true;
         }
     }
