@@ -21,6 +21,9 @@ builder.Services.AddDbContext<SettingDbcontext>(opt => opt.UseSqlServer(configur
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
+builder.Services.AddScoped<IQuestionService, QuestionService>();
+builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
+
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

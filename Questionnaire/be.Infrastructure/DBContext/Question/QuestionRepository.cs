@@ -11,25 +11,24 @@ namespace Infrastructure
         {
             _dbcontext = dbcontext;
         }
-        public List<Question> SelectQuesition()
+        public List<Question> GetQuestions()
         {
             var quesitionEntity = _dbcontext.Question.ToList();
             return quesitionEntity;
         }
-        public List<Question> RadomQuestion(int numberRadom)
+        public List<Question> QuestionRandoms(int numberRadom)
         {
             var radomQuestions = new List<Question>();
             var quesitionEntity = _dbcontext.Question.ToList();
 
-            var newQuestions = quesitionEntity.Where(c => !c.Test_Question_Mappings.Select(c => c.QuestionId).Contains(c.QuestionId)).ToList();
-            var oldQuestions = quesitionEntity.Where(c => c.Test_Question_Mappings.Select(c => c.QuestionId).Contains(c.QuestionId)).ToList();
+            var newQuestions = quesitionEntity.Where(c => c.Test_Question_Mappings != null && !c.Test_Question_Mappings.Select(c => c.QuestionId).Contains(c.QuestionId)).ToList();          
 
             if (newQuestions.Count > 0)
                 radomQuestions.AddRange(newQuestions);
             if (newQuestions.Count < numberRadom)
-                radomQuestions.AddRange(oldQuestions);
+                radomQuestions.AddRange(quesitionEntity);
 
-            return radomQuestions;
+            return radomQuestions.Take(numberRadom).ToList();
         }
     }
 }
