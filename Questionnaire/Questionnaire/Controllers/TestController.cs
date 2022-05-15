@@ -28,6 +28,12 @@ namespace Questionnaire.Controllers
             return _testService.CreateTest(test);
         }
 
+        [HttpPost]
+        public ActionResult<bool> TestQuestion(Test test, List<Question> questions)
+        {
+            return null;
+        }
+
         #endregion
     }
 }
