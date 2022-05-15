@@ -1,5 +1,6 @@
 ﻿using be.Data;
 using be.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure
 {
@@ -13,13 +14,13 @@ namespace Infrastructure
         }
         public List<Question> GetQuestions()
         {
-            var quesitionEntity = _dbcontext.Question.ToList();
+            var quesitionEntity = _dbcontext.Question.Include(c=>c.Opitions).ToList();
             return quesitionEntity;
         }
         public List<Question> QuestionRandoms(int numberRadom)
         {
             var radomQuestions = new List<Question>();
-            var quesitionEntity = _dbcontext.Question.ToList();
+            var quesitionEntity = _dbcontext.Question.Include(c => c.Opitions).ToList();
 
             var newQuestions = quesitionEntity.Where(c => c.Test_Question_Mappings != null && !c.Test_Question_Mappings.Select(c => c.QuestionId).Contains(c.QuestionId)).ToList();          
 
