@@ -52,8 +52,8 @@ namespace Infrastructure
             var testQuestions = new List<TestQuestionVo>();
 
             var testQuestionVos = _dbcontext.Test_Question_Mapping
-                .Include(xc => xc.Tests).Include(xc => xc.Questions)
-                .ThenInclude(x => x.Opitions).Where(xc => xc.TestId == testId).ToList();
+                .Include(xc => xc.Test).Include(xc => xc.Question).ThenInclude(x => x.Opitions)
+                .Where(xc => xc.TestId == testId).ToList();
 
             if (testQuestionVos == null)
                 return testQuestions;
@@ -63,22 +63,21 @@ namespace Infrastructure
                 var testQuestionVo = new TestQuestionVo()
                 {
                     TestId = testQuestion.TestId,
-                    Name = testQuestion.Tests.First().Name,
-                    Questions = testQuestion.Questions.Select(x => new QuestionVo
+                    Name = testQuestion.Test.Name,
+                    Questions = new QuestionVo()
                     {
-                        QuestionId = x.QuestionId,
-                        QuestionName = x.QuestionName,
-                        Opitions = x.Opitions.Select(x => new OpitionVo
+                        QuestionId = testQuestion.Question.QuestionId,
+                        QuestionName = testQuestion.Question.QuestionName,
+                        Opitions = testQuestion.Question.Opitions.Select(x => new OpitionVo
                         {
                             OpitionId = x.OpitionId,
                             OpitionName = x.OpitionName,
                             QuestionId = x.QuestionId,
                         }).ToList()
-                    }).ToList(),
+                    }
                 };
                 testQuestions.Add(testQuestionVo);
             }
-
             return testQuestions;
         }
     }

@@ -6,7 +6,7 @@
         public long TestId { get; set; }
         public long QuestionId { get; set; }
 
-        public ICollection<Question> Questions { get; set; }
-        public ICollection<Test> Tests { get; set; }
+        public virtual Question Question { get; set; }
+        public virtual Test Test { get; set; }
     }
 }
