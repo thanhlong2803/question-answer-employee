@@ -16,13 +16,20 @@ namespace be.Services
         {
             return _testRepository.GetTests();
         }
+
         public bool CreateTest(Test test)
         {
             return _testRepository.CreateTest(test);
         }
+
         public bool CreateTestQuestion(long testId, List<QuestionVo> questionVos)
         {
             return (_testRepository.CreateTestQuestion(testId, questionVos));
+        }
+
+        public List<TestQuestionVo> GetTestQuestions(long testId)
+        {
+            return _testRepository.GetTestQuestions(testId);
         }
     }
 }

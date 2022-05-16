@@ -27,10 +27,13 @@ namespace Questionnaire.Controllers
         public ActionResult<bool> CreateTest(Test test)
         {
             return _testService.CreateTest(test);
-        }       
+        }
 
-       [HttpGet("")]
-       public ActionResult<List<Qu>>
+        [HttpGet("TestQuestions")]
+        public ActionResult<List<TestQuestionVo>> TestQuestion(long testId)
+        {
+            return Ok(_testService.GetTestQuestions(testId));
+        }
 
 
         [HttpPost("CreateTestQuestion")]

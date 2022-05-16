@@ -13,10 +13,12 @@ namespace Infrastructure
         {
             _dbcontext = dbcontext;
         }
+
         public List<Test> GetTests()
         {
             return _dbcontext.Test.ToList();
         }
+
         public bool CreateTest(Test test)
         {
             if (test == null)
@@ -27,6 +29,7 @@ namespace Infrastructure
 
             return true;
         }
+
         public bool CreateTestQuestion(long testId, List<QuestionVo> questionVos)
         {
             var testQuestion = new List<Test_Question_Mapping>();
@@ -42,6 +45,41 @@ namespace Infrastructure
             _dbcontext.SaveChanges();
 
             return true;
+        }
+
+        public List<TestQuestionVo> GetTestQuestions(long testId)
+        {
+            var testQuestions = new List<TestQuestionVo>();
+
+            var testQuestionVos = _dbcontext.Test_Question_Mapping
+                .Include(xc => xc.Tests).Include(xc => xc.Questions)
+                .ThenInclude(x => x.Opitions).Where(xc => xc.TestId == testId).ToList();
+
+            if (testQuestionVos == null)
+                return testQuestions;
+
+            foreach (var testQuestion in testQuestionVos)
+            {
+                var testQuestionVo = new TestQuestionVo()
+                {
+                    TestId = testQuestion.TestId,
+                    Name = testQuestion.Tests.First().Name,
+                    Questions = testQuestion.Questions.Select(x => new QuestionVo
+                    {
+                        QuestionId = x.QuestionId,
+                        QuestionName = x.QuestionName,
+                        Opitions = x.Opitions.Select(x => new OpitionVo
+                        {
+                            OpitionId = x.OpitionId,
+                            OpitionName = x.OpitionName,
+                            QuestionId = x.QuestionId,
+                        }).ToList()
+                    }).ToList(),
+                };
+                testQuestions.Add(testQuestionVo);
+            }
+
+            return testQuestions;
         }
     }
 }
