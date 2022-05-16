@@ -9,6 +9,6 @@ namespace be.Services
         bool UpdateUser(User user);
         bool DeleteUser(long userId);
         bool CreateUser(User user);
-        bool ChoiceTestForUser(long userId, List<long> testIds)
+        bool ChoiceTestForUser(long userId, List<long> testIds);
     }
 }
