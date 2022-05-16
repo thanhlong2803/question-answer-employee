@@ -35,7 +35,6 @@ namespace Questionnaire.Controllers
             return Ok(_testService.GetTestQuestions(testId));
         }
 
-
         [HttpPost("CreateTestQuestion")]
         public ActionResult<bool> CreateTestQuestion(long testId, List<QuestionVo> questionVos)
         {

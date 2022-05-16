@@ -10,5 +10,6 @@ namespace Infrastructure
         bool CreateUser(User user);
         bool UpdateUser(User user);
         bool DeleteUser(long id);
+        bool ChoiceTestForUser(long userId, List<long> testIds);
     }
 }

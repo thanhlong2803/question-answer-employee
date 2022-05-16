@@ -62,5 +62,23 @@ namespace Infrastructure
             _dbcontext.SaveChanges();
             return true;
         }
+
+        public bool ChoiceTestForUser(long userId, List<long> testIds)
+        {
+            if (testIds == null)
+                return false;
+
+            var userTests = new List<User_Test_Mapping>();
+
+            foreach (var testId in testIds)
+            {
+                userTests.Add(new User_Test_Mapping { TestId = testId, UserId = userId });
+            }
+
+            _dbcontext.User_Test_Mapping.AddRange(userTests);
+            _dbcontext.SaveChanges();
+
+            return true;
+        }
     }
 }

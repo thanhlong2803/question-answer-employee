@@ -18,21 +18,30 @@ namespace be.Services
         {
             return _userRepository.GetUsers();
         }
+
         public User GetUserById(long userId)
         {
             return _userRepository.GetById(userId);
         }
+
         public bool UpdateUser(User user)
         {
             return _userRepository.UpdateUser(user);
         }
+
         public bool CreateUser(User user)
         {
             return _userRepository.CreateUser(user);
         }
+
         public bool DeleteUser(long userId)
         {
             return _userRepository.DeleteUser(userId);
+        }
+
+        public bool ChoiceTestForUser(long userId, List<long> testIds)
+        {
+           return _userRepository.ChoiceTestForUser(userId, testIds);
         }
     }
 }

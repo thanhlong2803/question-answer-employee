@@ -47,5 +47,15 @@ namespace Questionnaire.Controllers
         }
 
         #endregion
+
+        #region Choice the test for user
+
+        [HttpPost("ChoiceTestForUser")]
+        public ActionResult<bool> ChoiceTestForUser(long userId, List<long> testIds)
+        {
+            return _userServices.ChoiceTestForUser(userId, testIds);
+        }
+
+        #endregion
     }
 }
