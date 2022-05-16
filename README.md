@@ -15,7 +15,10 @@ b.	Manual Selection: The user shall manually select each question from the QD fo
 •	Saving test results for reviewing by each employee and for judging of the management.
 
 
-![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/question.png)
+![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/test_question.png)
 
 # Struct Question management in ASP.Net core
-![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/struct-asp-core.png)
+![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/struct_question.png)
+# Show API in the Swager. 
+![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/swager_question_1.png)
+![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/swager_question_2.png)
