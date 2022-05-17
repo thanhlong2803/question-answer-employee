@@ -1,6 +1,8 @@
 ﻿
 using be.Data;
+using be.Data.Model;
 using be.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure
 {
@@ -79,6 +81,59 @@ namespace Infrastructure
             _dbcontext.SaveChanges();
 
             return true;
+        }
+
+        public UserTestVo GetTestForUser(long userId)
+        {
+            var userTestVo = new UserTestVo();
+            var userTest = _dbcontext.User_Test_Mapping
+                .Include(xc => xc.User).Include(xc => xc.Test)
+                .Where(xc => xc.Score != null && xc.UserId == userId).FirstOrDefault();
+
+            if (userTest == null)
+                return userTestVo;
+
+            return userTestVo = new UserTestVo
+            {
+                UserId = userTest.UserId,
+                Fistname = userTest.User.Firstname,
+                Lastname = userTest.User.LastName,
+                TestQuestionVos = GetTestQuestions(userTest.TestId)
+            };
+        }
+
+        private List<TestQuestionVo> GetTestQuestions(long testId)
+        {
+            var testQuestions = new List<TestQuestionVo>();
+
+            var testQuestionVos = _dbcontext.Test_Question_Mapping
+                .Include(xc => xc.Test).Include(xc => xc.Question).ThenInclude(x => x.Opitions)
+                .Where(xc => xc.TestId == testId).ToList();
+
+            if (testQuestionVos == null)
+                return testQuestions;
+
+            foreach (var testQuestion in testQuestionVos)
+            {
+                var testQuestionVo = new TestQuestionVo()
+                {
+                    TestId = testQuestion.TestId,
+                    Name = testQuestion.Test.Name,
+                    Questions = new QuestionVo()
+                    {
+                        QuestionId = testQuestion.Question.QuestionId,
+                        QuestionName = testQuestion.Question.QuestionName,
+                        Opitions = testQuestion.Question.Opitions.Select(x => new OpitionVo
+                        {
+                            OpitionId = x.OpitionId,
+                            OpitionName = x.OpitionName,
+                            QuestionId = x.QuestionId,
+                        }).ToList()
+                    }
+                };
+                testQuestions.Add(testQuestionVo);
+            }
+            return testQuestions;
         }
     }
 }

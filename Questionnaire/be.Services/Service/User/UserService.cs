@@ -1,5 +1,6 @@
 ﻿
 using be.Data;
+using be.Data.Model;
 using Infrastructure;
 using System.Linq;
 
@@ -41,7 +42,12 @@ namespace be.Services
 
         public bool ChoiceTestForUser(long userId, List<long> testIds)
         {
-           return _userRepository.ChoiceTestForUser(userId, testIds);
+            return _userRepository.ChoiceTestForUser(userId, testIds);
+        }
+
+        public UserTestVo GetTestForUser(long userId)
+        {
+            return _userRepository.GetTestForUser(userId);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using be.Data;
+using be.Data.Model;
 
 namespace be.Services
 {
@@ -10,5 +11,6 @@ namespace be.Services
         bool DeleteUser(long userId);
         bool CreateUser(User user);
         bool ChoiceTestForUser(long userId, List<long> testIds);
+        UserTestVo GetTestForUser(long userId);
     }
 }

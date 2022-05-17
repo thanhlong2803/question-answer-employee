@@ -1,4 +1,5 @@
 using be.Data;
+using be.Data.Model;
 using be.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -54,6 +55,12 @@ namespace Questionnaire.Controllers
         public ActionResult<bool> ChoiceTestForUser(long userId, List<long> testIds)
         {
             return _userServices.ChoiceTestForUser(userId, testIds);
+        }
+
+        [HttpGet("GetTestForUser")]
+        public ActionResult<UserTestVo> GetTestForUser(long userId)
+        {
+            return _userServices.GetTestForUser(userId);
         }
 
         #endregion

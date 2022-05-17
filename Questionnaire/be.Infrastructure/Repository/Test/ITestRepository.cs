@@ -8,6 +8,6 @@ namespace be.Services
         List<Test> GetTests();
         bool CreateTest(Test test);
         bool CreateTestQuestion(long testId, List<QuestionVo> questionVos);
-        List<TestQuestionVo> GetTestQuestions(long testId);
+        List<TestQuestionVo> GetTestQuestions(long testId);       
     }
 }

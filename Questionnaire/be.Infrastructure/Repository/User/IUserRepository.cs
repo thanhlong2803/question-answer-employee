@@ -1,6 +1,8 @@
 ﻿
 using be.Services;
 using be.Data;
+using be.Data.Model;
+
 namespace Infrastructure
 {
     public interface IUserRepository
@@ -11,5 +13,6 @@ namespace Infrastructure
         bool UpdateUser(User user);
         bool DeleteUser(long id);
         bool ChoiceTestForUser(long userId, List<long> testIds);
+        UserTestVo GetTestForUser(long userId);
     }
 }
