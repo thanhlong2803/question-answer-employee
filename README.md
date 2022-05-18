@@ -14,7 +14,7 @@ a.	Random Selection: User inputs number of questions for the test and software s
 b.	Manual Selection: The user shall manually select each question from the QD for the test.
 •	Saving test results for reviewing by each employee and for judging of the management.
 
-
+# Database desgin 
 ![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/test_question.png)
 
 # Struct Question management in ASP.Net core
