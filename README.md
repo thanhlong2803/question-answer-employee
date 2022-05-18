@@ -22,4 +22,4 @@ b.	Manual Selection: The user shall manually select each question from the QD fo
 # A lot API for management show Swager
 ![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/swager_question_3.png)
 ![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/swager_question_4.png)
-# Struct Question management With Use Bootstrap With React .
+# Struct Question management with use bootstrap(4.0) with react .
