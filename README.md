@@ -2,7 +2,7 @@
 REQUIREMENTS
 1.	You are required to write a brief (maximum 1 page) technical specification for the solution to the problem described below.
 2.	For Database design please provide an ERD (Entity Relationship Diagram, hand drawn on paper is also acceptable).
-3.	Implement the application using Asp.net core Net6 and angular
+3.	Implement the application using Asp.net core Net6 and Use Bootstrap With React 
 
 
 PROBLEM
@@ -22,4 +22,4 @@ b.	Manual Selection: The user shall manually select each question from the QD fo
 # A lot API for management show Swager
 ![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/swager_question_3.png)
 ![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/swager_question_4.png)
-# Struct Question management in Angular with material UI.
+# Struct Question management With Use Bootstrap With React .
