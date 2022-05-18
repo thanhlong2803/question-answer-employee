@@ -80,5 +80,37 @@ namespace Infrastructure
             }
             return testQuestions;
         }
+
+        public double ScoreTestQuestionForUser(ScoreTestQuestionVo scoreTestQuestionVo)
+        {
+            double score = 0;
+            var testQuestionVos = _dbcontext.Test_Question_Mapping
+                .Include(xc => xc.Test).Include(xc => xc.Question).ThenInclude(x => x.Opitions)
+                .Where(xc => xc.TestId == scoreTestQuestionVo.TestId).ToList();
+
+            var optionForQuestions = testQuestionVos.SelectMany(c => c.Question.Opitions);
+            if (testQuestionVos == null || scoreTestQuestionVo == null || optionForQuestions == null)
+                return 0;
+
+            foreach (var doQuestion in scoreTestQuestionVo.Questions.Opitions)
+            {
+                foreach (var checkQuestion in optionForQuestions)
+                {
+                    if (checkQuestion.IsCorrect == doQuestion.IsCorrect)
+                    {
+                        score++;
+                    }
+                }
+            }
+
+            var updateSore = _dbcontext.User_Test_Mapping
+                .Where(x => x.UserId == scoreTestQuestionVo.UserId && x.TestId == scoreTestQuestionVo.TestId).FirstOrDefault();
+
+            if (updateSore != null)
+                updateSore.Score = score;
+            _dbcontext.SaveChanges();
+
+            return score;
+        }
     }
 }

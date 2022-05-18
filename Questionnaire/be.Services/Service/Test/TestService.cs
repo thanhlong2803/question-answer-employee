@@ -31,5 +31,10 @@ namespace be.Services
         {
             return _testRepository.GetTestQuestions(testId);
         }
+
+        public double ScoreTestQuestionForUser(ScoreTestQuestionVo scoreTestQuestionVo)
+        {
+            return _testRepository.ScoreTestQuestionForUser(scoreTestQuestionVo);
+        }
     }
 }

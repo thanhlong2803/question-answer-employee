@@ -41,6 +41,12 @@ namespace Questionnaire.Controllers
             return _testService.CreateTestQuestion(testId, questionVos);
         }
 
+        [HttpPost("ScoreTestQuestionForUser")]
+        public ActionResult<bool> ScoreTestQuestionForUser(ScoreTestQuestionVo scoreTestQuestionVo)
+        {
+            return Ok(_testService.ScoreTestQuestionForUser(scoreTestQuestionVo));
+        }
+
         #endregion
     }
 }

@@ -12,5 +12,7 @@ namespace be.Services
         bool CreateTestQuestion(long testId, List<QuestionVo> questionVos);
 
         List<TestQuestionVo> GetTestQuestions(long testId);
+
+        double ScoreTestQuestionForUser(ScoreTestQuestionVo scoreTestQuestionVo);
     }
 }
