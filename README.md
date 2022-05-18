@@ -17,9 +17,9 @@ b.	Manual Selection: The user shall manually select each question from the QD fo
 # Database desgin 
 ![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/test_question.png)
 
-# Struct Question management in ASP.Net core
+# Struct question management in ASP.Net core
 ![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/struct_question.png)
 # A lot API for management show Swager
 ![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/swager_question_3.png)
 ![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/swager_question_4.png)
-# Struct Question management with use bootstrap(4.0) with react .
+# Struct question management with use bootstrap(4.0) with react .
