@@ -1,21 +1,19 @@
 import './App.css';
-import { Form} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter as Router,  Routes , Route} from "react-router-dom";
+import { UserPage } from './main/user/user-page';
 
 function App() {
   return (
-    <>
-    <Form.Label htmlFor="inputPassword5">Password</Form.Label>
-    <Form.Control
-      type="password"
-      id="inputPassword5"
-      aria-describedby="passwordHelpBlock" />
-      <Form.Text id="passwordHelpBlock" muted>
-        Your password must be 8-20 characters long, contain letters and numbers, and
-        must not contain spaces, special characters, or emoji.
-      </Form.Text>
-  </>
-  );
+    <div className='App'>  
+     <Router>
+      <Routes>
+        <Route path='/' element={<UserPage/>}/>
+      </Routes>
+    </Router>
+  </div>
+);
+
 }
 
 export default App;
