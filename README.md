@@ -27,4 +27,9 @@ b.	Manual Selection: The user shall manually select each question from the QD fo
 
 Follow page https://react-bootstrap.github.io/getting-started/introduction/
 
+For example React Project Structure
+
+
+
+
 
