@@ -27,7 +27,7 @@ b.	Manual Selection: The user shall manually select each question from the QD fo
 
 Follow page https://react-bootstrap.github.io/getting-started/introduction/
 Install bootstrap 4.0
-![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/setting-bootstrap.png)
+![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/setup-bootstrap.png)
 For example React Project Structure
 ![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/struct_react-state-management.png)
 
