@@ -23,3 +23,8 @@ b.	Manual Selection: The user shall manually select each question from the QD fo
 ![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/swager_question_3.png)
 ![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/swager_question_4.png)
 # Struct question management with use bootstrap(4.0) with react .
+***Learn how to install bootstrap 4 in react.js. Bootstrap is a CSS framework***
+
+Follow page https://react-bootstrap.github.io/getting-started/introduction/
+
+
