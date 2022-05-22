@@ -1,12 +1,10 @@
-// import config from 'config';
-// import { handleResponse } from '../../_helpers/handle-response';
+import axiosClient from "../api/axios-client";
 
-export const UserService = {
-   getAllUser
+export const userService = {
+  getAll,
 };
 
-function getAllUser(){
-    // let apiUrl: 'http://localhost:7017'
-    // const requestOptions = { method: 'GET'};
-    // return fetch(`${config.apiUrl}/users`, requestOptions).then(handleResponse);
+function getAll(parmas) {
+  let url = "/User";
+  return axiosClient.get(url, [parmas]);
 }

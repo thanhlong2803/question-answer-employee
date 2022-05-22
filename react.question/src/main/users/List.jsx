@@ -2,62 +2,6 @@ import React, { Component, useEffect, useState } from "react";
 import { userService } from "../../_services/users/user.service";
 import { Link } from "react-router-dom";
 
-// class UserPage extends Component {
-//     constructor(props) {
-//         super(props);
-//         const [users, setUsers] = useState(null);
-
-//     }
-
-//     componentDidMount() {
-//        const fetchUserList = async() => {
-//            try{
-//             const response = await userService.getAll();
-//             this.state = response;
-//            }
-//            catch{
-//            }
-//        }
-
-//        fetchUserList();
-//     }
-
-//     render() {
-//         const { users } = this.state;
-//         return (
-//             <div className="container">
-//             	<div class="row mt-5">
-//                 <div class="col-md-12">
-//                     <div class="title-header text-center">
-//                         <h4>Users For Question</h4>
-//                     </div>
-//                 </div>
-//             </div>
-//             <div className="row">
-//                 <div className="span5">
-//                     <table className="table table-striped table-bordered">
-//                           <thead>
-//                           <tr>
-//                               <th>Fristname</th>
-//                               <th>Lastname</th>
-//                               <th>Status</th>
-//                           </tr>
-//                       </thead>
-//                       <tbody>
-//                         <tr>
-//                             <td>Donna R. Folse</td>
-//                             <td>2012/05/06</td>
-//                             <td><span className="label label-success">Active</span>
-//                             </td>
-//                         </tr>
-//                       </tbody>
-//                     </table>
-//                     </div>
-//             </div>
-//         </div>
-//         );
-//     }
-// }
 
 function UserList({ match }) {
   const { path } = match;
