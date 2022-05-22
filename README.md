@@ -1,3 +1,4 @@
+
 # Employee and for judging of the management
 REQUIREMENTS
 1.	You are required to write a brief (maximum 1 page) technical specification for the solution to the problem described below.
@@ -30,8 +31,9 @@ Install bootstrap 4.0
 ![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/setup-bootstrap.png)
 # For example React Project Structure
 ![enter image description here](https://github.com/thanhlong2803/update-image/blob/main/image4/struct-react.png)
-
-
-
-
-
+# The project apply library for react js
+ - using ***react-router-dom***
+ - using ***react-webpack***
+ - using ***rxjs***
+ - using ***react-bootstrap***
+ - using ***axios***
