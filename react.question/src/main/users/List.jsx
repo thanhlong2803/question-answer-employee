@@ -1,30 +1,26 @@
-import React, { Component, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { userService } from "../../_services/users/user.service";
 import { Link } from "react-router-dom";
+// import "./user.css"
 
-
-function UserList({ match }) {
-  const { path } = match;
-  const [users, setUsers] = useState(null);
-
-  function getAll() {
+function List({ match }) {
+  // const { path } = match;
+  const [users, setUsers] = useState(null);  
+  useEffect(() => {
     const fetchUserList = async () => {
       try {
         const response = await userService.getAll();
         setUsers(response);
       } catch {}
     };
-  }
-
-  useEffect(() => {
-    this.getAll();
+    fetchUserList();
   }, []);
 
   return (
     <div className="container">
-      <div class="row mt-5">
-        <div class="col-md-12">
-          <div class="title-header text-center">
+      <div className="row mt-5">
+        <div className="col-md-12">
+          <div className="title-header text-center">
             <h4>Users For Question</h4>
           </div>
         </div>
@@ -37,7 +33,7 @@ function UserList({ match }) {
                 <th>Fristname</th>
                 <th>Lastname</th>
                 <th>Fullname</th>
-                <th>Status</th>
+                <th>Status Test</th>
               </tr>
             </thead>
             <tbody>
@@ -47,11 +43,11 @@ function UserList({ match }) {
                             <td> {user.lastName}</td>
                             <td>{user.firstName} {user.lastName}</td>
                             <td style={{ whiteSpace: 'nowrap' }}>
-                                <Link to={`${path}/edit/${user.userId}`} className="btn btn-sm btn-primary mr-1">Edit</Link>
-                                <button  className="btn btn-sm btn-danger btn-delete-user" disabled={user.isDeleting}>
+                                {/* <Link to={`${path}/edit/${user.userId}`} className="btn btn-sm btn-primary mr-1">Edit</Link> */}
+                                <button  className="btn btn-sm btn-info btn-info-user" disabled={user.isDeleting}>
                                     {user.isDeleting 
                                         ? <span className="spinner-border spinner-border-sm"></span>
-                                        : <span>Delete</span>
+                                        : <span>Create test</span>
                                     }
                                 </button>
                             </td>
@@ -79,4 +75,4 @@ function UserList({ match }) {
   );
 }
 
-export { UserList };
+export { List };

@@ -57,7 +57,7 @@ namespace Infrastructure
                 return false;
 
             userEnity.UserId = user.UserId;
-            userEnity.Firstname = user.Firstname;
+            userEnity.FirstName = user.FirstName;
             userEnity.LastName = user.LastName;
 
             _dbcontext.Update(userEnity);
@@ -96,7 +96,7 @@ namespace Infrastructure
             return userTestVo = new UserTestVo
             {
                 UserId = userTest.UserId,
-                Fistname = userTest.User.Firstname,
+                Fistname = userTest.User.FirstName,
                 Lastname = userTest.User.LastName,
                 TestQuestionVos = GetTestQuestions(userTest.TestId)
             };
