@@ -1,5 +1,5 @@
 import React from "react";
-import {  Routes,  Route,  Switch,  Redirect,  useLocation,} from "react-router-dom";
+import {  Routes,  Route,  Router} from "react-router-dom";
 // import { Nav, Alert } from '@/_components';
 // import { Home } from '@/home';
 
@@ -9,8 +9,8 @@ import {List} from "../main/users/List"
 function App() {
   return (
     <Routes>      
-       <Route exact path="/users" component={List} />
-    </Routes>     
+        <Route exact path="/users" component={Users} />
+    </Routes>    
   );
 }
 

@@ -1,9 +1,10 @@
 import React, {  useEffect, useState } from "react";
 import { userService } from "../../_services/users/user.service";
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 import "../users/user.less"
 
 function List({ match }) {
+  const { pathname } = useLocation();  
   const [users, setUsers] = useState(null);  
 
   useEffect(() => {
@@ -27,6 +28,7 @@ function List({ match }) {
       </div>
       <div className="row">
         <div className="span5">
+        <Link to={`${pathname}/add`} className="btn btn-sm btn-success mb-2">Add User</Link>
           <table className="table table-striped table-bordered">
             <thead>
               <tr>
@@ -43,7 +45,7 @@ function List({ match }) {
                             <td> {user.lastName}</td>
                             <td>{user.firstName} {user.lastName}</td>
                             <td style={{ whiteSpace: 'nowrap' }}>
-                                {/* <Link to={`${path}/edit/${user.userId}`} className="btn btn-sm btn-primary mr-1">Edit</Link> */}
+                                <Link to={`${pathname}/edit/${user.userId}`} className="btn btn-sm btn-primary mr-1">Edit</Link>
                                 <button  className="btn btn-sm btn-info btn-info-user" disabled={user.isDeleting}>
                                     {user.isDeleting 
                                         ? <span className="spinner-border spinner-border-sm"></span>
