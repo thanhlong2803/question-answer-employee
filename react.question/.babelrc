@@ -5,5 +5,5 @@
     ],
     "plugins": [
         ["@babel/transform-runtime"]  
-      ] 
+    ] 
 }

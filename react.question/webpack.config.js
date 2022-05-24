@@ -3,18 +3,24 @@ const path = require('path');
 
 module.exports = {
     mode: 'development',
-    resolve: {
-        extensions: ['.js', '.jsx']
-    },
     module: {
         rules: [
             {
                 test: /\.jsx?$/,
                 loader: 'babel-loader'
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    { loader: 'style-loader' },
+                    { loader: 'css-loader' },
+                    { loader: 'less-loader' }
+                ]
             }
         ]
     },
     resolve: {
+        mainFiles: ['index', 'Index'],
         extensions: ['.js', '.jsx'],
         alias: {
             '@': path.resolve(__dirname, 'src/'),
@@ -29,7 +35,7 @@ module.exports = {
     externals: {
         // global app config object
         config: JSON.stringify({
-            apiUrl: 'http://localhost:7017' 
+            apiUrl: 'https://localhost:7017/'
         })
     }
 }

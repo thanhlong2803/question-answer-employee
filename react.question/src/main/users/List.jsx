@@ -1,11 +1,15 @@
 import React, {  useEffect, useState } from "react";
 import { userService } from "../../_services/users/user.service";
 import { Link } from "react-router-dom";
-// import "./user.css"
+import "../users/user.less"
 
 function List({ match }) {
+  // debugger
   // const { path } = match;
+  // console.log(path);
+
   const [users, setUsers] = useState(null);  
+
   useEffect(() => {
     const fetchUserList = async () => {
       try {
@@ -18,7 +22,7 @@ function List({ match }) {
 
   return (
     <div className="container">
-      <div className="row mt-5">
+      <div className="row mt-12">
         <div className="col-md-12">
           <div className="title-header text-center">
             <h4>Users For Question</h4>
