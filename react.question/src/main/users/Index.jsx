@@ -1,13 +1,14 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
 import { List } from './List';
 
-function Users({ match }) {
-    debugger
-    const { path } = match;    
+function Users({ match }) {   
+    const { pathname } = useLocation();    
     return (
-        <Route exact path={path} component={List} />
+        <Routes>
+           <Route path={pathname} component={List} />    
+        </Routes>
     );
 }
 

@@ -4,10 +4,6 @@ import { Link } from "react-router-dom";
 import "../users/user.less"
 
 function List({ match }) {
-  // debugger
-  // const { path } = match;
-  // console.log(path);
-
   const [users, setUsers] = useState(null);  
 
   useEffect(() => {
