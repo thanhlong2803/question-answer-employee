@@ -9,6 +9,7 @@ export const userService = {
   getAll,
   getById,
   create,
+  update
 };
 
 function getAll(parmas) {
@@ -20,5 +21,9 @@ function getById(id) {
 }
 
 function create(parmas) {
-  return fetchClient.post(`${baseUrl}User`, parmas);
+  return fetchClient.post(`${baseUrl}/User`, parmas);
+}
+
+function update(parmas) {
+  return fetchClient.put(`${baseUrl}/User`, parmas);
 }

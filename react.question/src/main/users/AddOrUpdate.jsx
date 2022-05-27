@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link, Navigate, useParams, useNavigate } from "react-router-dom";
+import { Link,  useParams, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 import { userService } from "../../_services/users/user.service";
 
 function AddOrUpdate() {
-    const { id } = useParams();
+    const { id  } = useParams();
     const navigate = useNavigate();
 
     const isAddMode = !id;
@@ -25,13 +25,23 @@ function AddOrUpdate() {
     });
 
     function onSubmit(data) {
-        createUser(data);
+        return isAddMode
+            ? createUser(data)
+            : updateUser(data);
     }
 
     function createUser(data) {
         data.userId = 0;
-        userService.create(data);
-        navigate('/users')
+        var response = userService.create(data);
+        if (response)
+            return navigate('/users');
+    }
+
+    function updateUser(data) {       
+        data.userId = parseInt(id);
+        var response = userService.update(data);
+        if (response)
+            return navigate('/users')
     }
 
     useEffect(() => {
@@ -56,8 +66,7 @@ function AddOrUpdate() {
                     </div>
                 </div>
                 <div className='col-md-12'>
-                    <form onSubmit={handleSubmit(onSubmit)} onReset={reset}>
-                        <input {...register("userId")} hidden />
+                    <form onSubmit={handleSubmit(onSubmit)} onReset={reset}>                   
                         <div className="form-row">
                             <div className="form-group col-12">
                                 <label>First Name</label>

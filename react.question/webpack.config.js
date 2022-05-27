@@ -35,7 +35,7 @@ module.exports = {
     externals: {
         // global app config object
         config: JSON.stringify({
-            apiUrl: 'https://localhost:7017/'
+            apiUrl: 'https://localhost:7017'
         })
     }
 }

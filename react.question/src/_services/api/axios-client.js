@@ -2,7 +2,7 @@ import axios from "axios";
 import queryString from "query-string";
 import config from 'config';
 
-const baseUrl = `${config.apiUrl}`;
+const baseUrl = `${config.apiUrl}/`;
 
 const axiosClient = axios.create({
   baseURL: baseUrl ,
