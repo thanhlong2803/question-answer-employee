@@ -10,7 +10,7 @@ import { AddOrUpdate } from "../main/users/AddOrUpdate";
 function App() {
   return (
     <Suspense fallback={<h1>Loading...</h1>}>
-      <Routes>      
+      <Routes>             
          <Route exact path="/users" element={<Users />} />     
          <Route path={`/users/add`} element={<AddOrUpdate />} />
          <Route path={`users/edit/:id`} element={<AddOrUpdate />} />     
