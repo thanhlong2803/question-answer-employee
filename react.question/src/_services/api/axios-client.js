@@ -6,8 +6,8 @@ const baseUrl = `${config.apiUrl}`; //Setting config url api
 
 const axiosClient = axios.create({
   baseURL: baseUrl ,
-  headers: { "content-type": "appliction/json" },
-  paramsSerializers: (parmas) => queryString.stringify(parmas),
+  headers: { "content-type": "appliction/json" },  
+  paramsSerializers: (parmas) => queryString.stringify(parmas) 
 });
 
 //We are handel submit login send request to indentity after it authentication response token and API HTTP

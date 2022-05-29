@@ -1,9 +1,10 @@
 import axiosClient from "../api/axios-client";
 import { BehaviorSubject } from "rxjs";
-
+import axios from "axios";
+const url = "https://localhost:7017/User/Authentication";
 
 const currentUserSubject = new BehaviorSubject(
-  JSON.parse(localStorage.getItem("currentUser"))
+  localStorage.getItem("currentUser")
 );
 
 export const authenticationService = {
@@ -15,13 +16,14 @@ export const authenticationService = {
   },
 };
 
-function login(username, password) {
-  axiosClient.post();
-
-  localStorage.setItem("currentUser", JSON.stringify(null));
-  currentUserSubject.next(null);
-  
-  return null;
+function login(data) {
+  const authentication = { Username: data.username, Password: data.password };
+  return axios.post(url, authentication).then((res) => {
+    if (res.data) {
+      localStorage.setItem("currentUser", JSON.stringify(res.data));
+      currentUserSubject.next(res);
+    }
+  });
 }
 
 function logout() {

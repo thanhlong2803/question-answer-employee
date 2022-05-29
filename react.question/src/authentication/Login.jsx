@@ -5,7 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from "react-hook-form";
 import * as Yup from 'yup';
 
-import {authenticationService} from '../_services/authentication/authentication.service' 
+import { authenticationService } from '../_services/authentication/authentication.service'
 
 const Login = () => {
     const navigate = useNavigate();
@@ -22,10 +22,11 @@ const Login = () => {
     });
 
     function login(data) {
-        console.log(data);        
+        console.log(data);
+        authenticationService.login(data);
     }
 
-    useEffect(() => {   
+    useEffect(() => {
         const fields = ['username', 'password'];
         fields.forEach(field => setValue(field));
     })

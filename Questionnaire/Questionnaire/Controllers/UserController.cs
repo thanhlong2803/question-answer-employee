@@ -64,5 +64,16 @@ namespace Questionnaire.Controllers
         }
 
         #endregion
+
+        #region Authentication
+
+        [HttpPost("Authentication")]
+        public ActionResult<User> Authentication(Authentication authentication)
+        {
+            var user = new User() { UserId = 1, FirstName = "Long", LastName = "Cao" };
+            return user;
+        }
+
+        #endregion
     }
 }
