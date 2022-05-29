@@ -1,5 +1,7 @@
 import axiosClient from "../api/axios-client";
 import { BehaviorSubject } from "rxjs";
+
+
 const currentUserSubject = new BehaviorSubject(
   JSON.parse(localStorage.getItem("currentUser"))
 );
@@ -18,6 +20,7 @@ function login(username, password) {
 
   localStorage.setItem("currentUser", JSON.stringify(null));
   currentUserSubject.next(null);
+  
   return null;
 }
 

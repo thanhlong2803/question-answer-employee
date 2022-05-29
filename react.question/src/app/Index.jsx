@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route exact path="" element={<Login />} />
 
-        <Route path="/users" element={<Users />} />
+        <Route path="/users" element={<Users />} caseSensitive=""/>
         <Route path={`/users/add`} element={<AddOrUpdate />} />
         <Route path={`users/edit/:id`} element={<AddOrUpdate />} />
       </Routes>
