@@ -14,7 +14,7 @@ import { Login } from "../authentication/Login"
 function App() {
   return (
     <Suspense fallback={<h1>Loading...</h1>}>
-      <Routes>
+      <Routes>        
         <Route exact path="" element={<Login />} />
 
         <Route path="/users" element={<Users />} caseSensitive=""/>
