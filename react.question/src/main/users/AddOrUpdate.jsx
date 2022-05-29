@@ -20,9 +20,9 @@ function AddOrUpdate() {
     });
 
     // functions to build form returned by useForm() hook
-    const { register, handleSubmit, reset, setValue, errors, formState } = useForm({
+    const { register, handleSubmit, reset, setValue,  formState } = useForm({           
         resolver: yupResolver(validationSchema)
-    });
+    });   
 
     function onSubmit(data) {
         return isAddMode
@@ -70,12 +70,12 @@ function AddOrUpdate() {
                         <div className="form-row">
                             <div className="form-group col-12">
                                 <label>First Name</label>
-                                <input {...register("firstName")} name="firstName" type="text" className='form-control' />
+                                <input {...register('firstName', {required : true})} name="firstName" type="text" className='form-control' />
                                 <div className="invalid-feedback"></div>
                             </div>
                             <div className="form-group col-12">
                                 <label>Last Name</label>
-                                <input  {...register("lastName")} name="lastName" type="text" className='form-control' />
+                                <input  {...register('lastName', {required : true})} name="lastName" type="text" className='form-control' />
                                 <div className="invalid-feedback"></div>
                             </div>
                         </div>

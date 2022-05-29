@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^2.8.10",
+    "antd": "^4.20.6",
     "axios": "^0.27.2",
     "bootstrap": "^4.6.0",
     "bootstrap-4-react": "^0.0.59",
@@ -34,18 +35,11 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": [
+    ">0.2%",
+   "not dead",
+   "not op_mini all"
+ ],
   "devDependencies": {
     "css-loader": "^4.3.0",
     "html-webpack-plugin": "^5.5.0",
