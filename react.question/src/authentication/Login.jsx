@@ -4,11 +4,13 @@ import "../authentication/login.css"
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from "react-hook-form";
 import * as Yup from 'yup';
+import ParentComponent from '../main/parent/parent-class-component'
 
 import { authenticationService } from '../_services/authentication/authentication.service'
 
 const Login = () => {
     const navigate = useNavigate();
+    const dataModel = { username: 'David', lastname: 'Cao' };
 
     const validationSchema = Yup.object().shape({
         username: Yup.string()
@@ -34,6 +36,10 @@ const Login = () => {
     return (
         <div className="login-wrap">
             <div className="login-html">
+
+                {/* call parent component */}
+                <ParentComponent model={dataModel} />
+
                 <input id="tab-1" type="radio" name="tab" className="sign-in" aria-checked /><label htmlFor="tab-1" className="tab">Sign In</label>
                 <input id="tab-2" type="radio" name="tab" className="for-pwd" /><label htmlFor="tab-2" className="tab">Forgot Password</label>
                 <form onSubmit={handleSubmit(login)} className="login-form">

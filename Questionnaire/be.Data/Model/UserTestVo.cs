@@ -9,4 +9,9 @@
         public string Fullname => Fistname + Lastname;
         public List<TestQuestionVo> TestQuestionVos { get; set; }
     }
+    public class Authentication
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+    }
 }
