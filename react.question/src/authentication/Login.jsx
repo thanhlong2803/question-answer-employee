@@ -4,7 +4,9 @@ import "../authentication/login.css"
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from "react-hook-form";
 import * as Yup from 'yup';
+
 import ParentComponent from '../main/parent/parent-class-component'
+import BindingDataValue from '../main/data-bind-value/data-bind'
 
 import { authenticationService } from '../_services/authentication/authentication.service'
 
@@ -38,7 +40,8 @@ const Login = () => {
             <div className="login-html">
 
                 {/* call parent component */}
-                <ParentComponent model={dataModel} />
+                <BindingDataValue />
+                {/* <ParentComponent model={dataModel} /> */}
 
                 <input id="tab-1" type="radio" name="tab" className="sign-in" aria-checked /><label htmlFor="tab-1" className="tab">Sign In</label>
                 <input id="tab-2" type="radio" name="tab" className="for-pwd" /><label htmlFor="tab-2" className="tab">Forgot Password</label>
