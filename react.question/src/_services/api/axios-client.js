@@ -1,7 +1,7 @@
 import axios from "axios";
 import queryString from "query-string";
 import config from 'config';
-
+  
 const baseUrl = `${config.apiUrl}`; //Setting config url api 
 
 const axiosClient = axios.create({
