@@ -18,9 +18,8 @@ export default function ParentComponent(props) {
     };
 
     //Set Values from the input to the model when the values changed
-    const handleChange = (event) => {
-        debugger;
-
+    const handleChange = (event) => {  
+        
         // get the value of the field
         const value = event?.target?.value;
         console.log(model);
