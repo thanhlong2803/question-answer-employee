@@ -25,8 +25,7 @@ const Login = () => {
         resolver: yupResolver(validationSchema)
     });
 
-    function login(data) {
-        console.log(data);
+    function login(data) {        
         authenticationService.login(data);
     }
 

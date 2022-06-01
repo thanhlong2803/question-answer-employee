@@ -19,7 +19,7 @@ export default function ParentComponent(props) {
 
     //Set Values from the input to the model when the values changed
     const handleChange = (event) => {  
-        
+
         // get the value of the field
         const value = event?.target?.value;
         console.log(model);
@@ -35,7 +35,6 @@ export default function ParentComponent(props) {
                 // pass the function to child component
                 handleChange={handleChange}
             />
-
             {/* <input type="submit" value="Submit" onClick={handleSubmit} /> */}
         </div>
     );
